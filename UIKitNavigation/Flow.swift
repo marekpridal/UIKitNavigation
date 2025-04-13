@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Flow: View {
+    let appCoordinator: any Coordinator
+
     @ViewBuilder let contentViewBuilder: (
         @escaping @MainActor (ContentViewModel.Action) -> Void
     ) -> ContentView
@@ -25,10 +27,16 @@ struct Flow: View {
             }
         }
         .navigationDestination(isPresented: $pushPresentation) {
-            Text("Push")
+            NavigationControllerView<FeatureCoordinator>(appCoordinator: appCoordinator) { coordinator in
+                pushPresentation = false
+                appCoordinator.removeChildCoordinator(childCoordinator: coordinator)
+            }
         }
         .fullScreenCover(isPresented: $modalPresentation) {
-            Text("Full screen")
+            NavigationControllerView<FeatureCoordinator>(appCoordinator: appCoordinator, showCloseButton: true) { coordinator in
+                modalPresentation = false
+                appCoordinator.removeChildCoordinator(childCoordinator: coordinator)
+            }
         }
     }
 }

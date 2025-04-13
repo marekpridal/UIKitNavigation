@@ -37,8 +37,8 @@
 		DF2296E92DABB7E100AA3E00 = {
 			isa = PBXGroup;
 			children = (
-				DF2296F42DABB7E100AA3E00 /* UIKitNavigation */,
 				DF2296F32DABB7E100AA3E00 /* Products */,
+				DF2296F42DABB7E100AA3E00 /* UIKitNavigation */,
 			);
 			sourceTree = "<group>";
 		};

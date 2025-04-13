@@ -1,14 +1,7 @@
 import Navigation
 import SwiftUI
 
-final class AppCoordinator: Coordinator {
-    var childCoordinators: [any Coordinator] = []
-    var navigationController: UINavigationController
 
-    init(navigationController: UINavigationController = UINavigationController()) {
-        self.navigationController = navigationController
-    }
-}
 
 @main
 struct UIKitNavigationApp: App {

@@ -11,7 +11,11 @@ import SwiftUI
 struct UIKitNavigationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                Flow { action in
+                    ContentView(viewModel: ContentViewModel(onAction: action))
+                }
+            }
         }
     }
 }

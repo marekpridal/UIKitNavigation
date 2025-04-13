@@ -5,6 +5,7 @@
 //  Created by Marek Pridal on 13.04.2025.
 //
 
+import Navigation
 import SwiftUI
 
 final class AppCoordinator: Coordinator {

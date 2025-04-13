@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DF2297222DABC8E800AA3E00 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = DF2297212DABC8E800AA3E00 /* Navigation */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DF2296F22DABB7E100AA3E00 /* UIKitNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2297222DABC8E800AA3E00 /* Navigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = UIKitNavigation;
 			packageProductDependencies = (
+				DF2297212DABC8E800AA3E00 /* Navigation */,
 			);
 			productName = UIKitNavigation;
 			productReference = DF2296F22DABB7E100AA3E00 /* UIKitNavigation.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = DF2296E92DABB7E100AA3E00;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DF2297202DABC8E800AA3E00 /* XCLocalSwiftPackageReference "../Navigation" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DF2296F32DABB7E100AA3E00 /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		DF2297202DABC8E800AA3E00 /* XCLocalSwiftPackageReference "../Navigation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Navigation;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF2297212DABC8E800AA3E00 /* Navigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Navigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF2296EA2DABB7E100AA3E00 /* Project object */;
 }

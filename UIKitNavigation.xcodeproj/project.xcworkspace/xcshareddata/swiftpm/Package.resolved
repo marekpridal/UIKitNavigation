@@ -1,0 +1,15 @@
+{
+  "originHash" : "36142d10800a813fcf4ad924fb6798323553687b4c1a1a3837bb0a6d0eca76eb",
+  "pins" : [
+    {
+      "identity" : "swiftuikitnavigation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marekpridal/SwiftUIKitNavigation.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "37d6385c81def991413cc411385aafad5f84e3ad"
+      }
+    }
+  ],
+  "version" : 3
+}

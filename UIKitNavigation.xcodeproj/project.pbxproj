@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF2297222DABC8E800AA3E00 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = DF2297212DABC8E800AA3E00 /* Navigation */; };
+		DF22972E2DABCDAD00AA3E00 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = DF22972D2DABCDAD00AA3E00 /* Navigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF22972E2DABCDAD00AA3E00 /* Navigation in Frameworks */,
 				DF2297222DABC8E800AA3E00 /* Navigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +73,7 @@
 			name = UIKitNavigation;
 			packageProductDependencies = (
 				DF2297212DABC8E800AA3E00 /* Navigation */,
+				DF22972D2DABCDAD00AA3E00 /* Navigation */,
 			);
 			productName = UIKitNavigation;
 			productReference = DF2296F22DABB7E100AA3E00 /* UIKitNavigation.app */;
@@ -101,7 +104,7 @@
 			mainGroup = DF2296E92DABB7E100AA3E00;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DF2297202DABC8E800AA3E00 /* XCLocalSwiftPackageReference "../Navigation" */,
+				DF22972C2DABCDAD00AA3E00 /* XCRemoteSwiftPackageReference "SwiftUIKitNavigation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DF2296F32DABB7E100AA3E00 /* Products */;
@@ -334,16 +337,25 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		DF2297202DABC8E800AA3E00 /* XCLocalSwiftPackageReference "../Navigation" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Navigation;
+/* Begin XCRemoteSwiftPackageReference section */
+		DF22972C2DABCDAD00AA3E00 /* XCRemoteSwiftPackageReference "SwiftUIKitNavigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marekpridal/SwiftUIKitNavigation.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		DF2297212DABC8E800AA3E00 /* Navigation */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = Navigation;
+		};
+		DF22972D2DABCDAD00AA3E00 /* Navigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF22972C2DABCDAD00AA3E00 /* XCRemoteSwiftPackageReference "SwiftUIKitNavigation" */;
 			productName = Navigation;
 		};
 /* End XCSwiftPackageProductDependency section */

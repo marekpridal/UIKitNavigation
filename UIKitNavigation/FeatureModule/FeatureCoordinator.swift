@@ -28,12 +28,23 @@ final class FeatureCoordinator: CoordinatorWithDidFinish {
     }
 
     private func start() {
-        let controller = UIHostingController(rootView: FeatureAView(viewModel: FeatureAViewModel(onAction: { action in
+        let controller = UIHostingController(rootView: FeatureAView(viewModel: FeatureAViewModel(onAction: { [weak self] action in
             switch action {
             case .featureB:
-                break
+                self?.showFeatureB()
             }
         })))
         navigationController.setViewControllers([controller], animated: false)
+    }
+
+    private func showFeatureB() {
+        let controller = UIHostingController(rootView: FeatureBView(viewModel: FeatureBViewModel(onAction: { [weak self] action in
+            switch action {
+            case .closeFeatureModule:
+                guard let self else { return }
+                self.coordinatorDidFinish?(self)
+            }
+        })))
+        navigationController.pushViewController(controller, animated: true)
     }
 }

@@ -1,10 +1,3 @@
-//
-//  FeatureAView.swift
-//  UIKitNavigation
-//
-//  Created by Marek Pridal on 13.04.2025.
-//
-
 import SwiftUI
 
 struct FeatureAView: View {

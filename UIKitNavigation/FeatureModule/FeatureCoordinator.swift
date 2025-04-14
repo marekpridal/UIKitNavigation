@@ -31,6 +31,8 @@ final class FeatureCoordinator: Coordinator {
     private func start() {
         let viewModel = FeatureAViewModel(productID: input?.productID ?? "", onAction: { [weak self] action in
             switch action {
+            case .showSheet:
+                self?.showSheet()
             case .featureB:
                 self?.showFeatureB()
             }
@@ -42,6 +44,15 @@ final class FeatureCoordinator: Coordinator {
             animated: true
         )
         navigationController.setViewControllers([controller], animated: false)
+    }
+
+    private func showSheet() {
+        let controller = UIHostingController(rootView: Text("UIKit Sheet"))
+        if let sheet = controller.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+        }
+        navigationController.present(controller, animated: true)
     }
 
     private func showFeatureB() {

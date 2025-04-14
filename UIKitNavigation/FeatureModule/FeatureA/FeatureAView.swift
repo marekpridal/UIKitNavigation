@@ -2,10 +2,17 @@ import SwiftUI
 
 struct FeatureAView: View {
     @ObservedObject var viewModel: FeatureAViewModel
+    @State private var showSheet = false
 
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             Text("ProductID: \(viewModel.productID)")
+            Button("Show Sheet in Coordinator") {
+                viewModel.onAction(.showSheet)
+            }
+            Button("Show Sheet in SwiftUI") {
+                showSheet = true
+            }
             Button("Feature B") {
                 viewModel.onAction(.featureB)
             }
@@ -18,11 +25,16 @@ struct FeatureAView: View {
                 })
             }
         }
+        .sheet(isPresented: $showSheet) {
+            Text("Sheet in SwiftUI")
+                .presentationDetents([.medium])
+        }
     }
 }
 
 final class FeatureAViewModel: ObservableObject {
     enum Action {
+        case showSheet
         case featureB
     }
 

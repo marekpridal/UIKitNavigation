@@ -4,7 +4,8 @@ struct ContentView: View {
     @ObservedObject var viewModel: ContentViewModel
 
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
+            Text("Output: \(viewModel.output ?? "nil")")
             Button("Push presentation") {
                 viewModel.onAction(.pushPresentation)
             }

@@ -6,9 +6,11 @@ final class ContentViewModel: ObservableObject {
         case modalPresentation
     }
 
+    let output: String?
     let onAction: @MainActor (Action) -> Void
 
-    init(onAction: @escaping @MainActor (Action) -> Void) {
+    init(output: String?, onAction: @escaping @MainActor (Action) -> Void) {
+        self.output = output
         self.onAction = onAction
     }
 }

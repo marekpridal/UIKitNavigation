@@ -1,17 +1,15 @@
 import Navigation
 import SwiftUI
 
-
-
 @main
 struct UIKitNavigationApp: App {
-    let appCoordinator = AppCoordinator()
+    let appCoordinator = AppCoordinator(navigationController: UINavigationController())
 
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                Flow(appCoordinator: appCoordinator) { action in
-                    ContentView(viewModel: ContentViewModel(onAction: action))
+                Flow(appCoordinator: appCoordinator) { output, action in
+                    ContentView(viewModel: ContentViewModel(output: output, onAction: action))
                 }
             }
         }

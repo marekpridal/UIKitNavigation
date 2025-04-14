@@ -21,7 +21,7 @@ struct Flow: View {
             }
         }
         .navigationDestination(isPresented: $pushPresentation) {
-            NavigationControllerView<FeatureCoordinator>(appCoordinator: appCoordinator) { coordinator in
+            NavigationControllerView<FeatureCoordinator>(appCoordinator: appCoordinator, input: .init(productID: "Flow Product ID")) { coordinator in
                 pushPresentation = false
                 appCoordinator.removeChildCoordinator(childCoordinator: coordinator)
             }

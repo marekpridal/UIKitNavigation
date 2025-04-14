@@ -3,6 +3,10 @@ import SwiftUI
 import UIKit
 
 final class FeatureCoordinator: CoordinatorWithDidFinish {
+    struct Input {
+        let productID: String
+    }
+
     let navigationController: UINavigationController
     var coordinatorDidFinish: ((any CoordinatorWithDidFinish) -> Void)? {
         didSet {
@@ -15,25 +19,27 @@ final class FeatureCoordinator: CoordinatorWithDidFinish {
             setupCloseButton()
         }
     }
+    let input: Input?
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, input: Input?) {
         self.navigationController = navigationController
+        self.input = input
         self.showCloseButton = false
         start()
     }
 
-    convenience init(navigationController: UINavigationController, coordinatorDidFinish: ((any CoordinatorWithDidFinish) -> Void)?) {
-        self.init(navigationController: navigationController)
-        self.coordinatorDidFinish = coordinatorDidFinish
-    }
-
     private func start() {
-        let controller = UIHostingController(rootView: FeatureAView(viewModel: FeatureAViewModel(onAction: { [weak self] action in
+        let controller = UIHostingController(rootView: FeatureAView(viewModel: FeatureAViewModel(productID: input?.productID ?? "", onAction: { [weak self] action in
             switch action {
             case .featureB:
                 self?.showFeatureB()
             }
         })))
+        controller.title = "UIKit title"
+        controller.navigationItem.setRightBarButton(
+            UIBarButtonItem(title: "UIKit right bar", style: .done, target: nil, action: nil),
+            animated: true
+        )
         navigationController.setViewControllers([controller], animated: false)
     }
 
